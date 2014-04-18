@@ -32,8 +32,9 @@ int is_prime()
 			{
 				p = f;
 			}
-		cout << p << endl;
-	}
+	
+	}	
+	cout << p << endl;
 	return p;
 }
 int main()
