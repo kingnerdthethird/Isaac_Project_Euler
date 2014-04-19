@@ -19,7 +19,7 @@ bool Check(int num)
 	number = converter.str();
 	if (number == string(number.rbegin(), number.rend()))
 		{
-			cout << num << endl;
+			// cout << num << endl;
 			return true;
 		}
 	else
@@ -28,19 +28,22 @@ bool Check(int num)
 int Num()
 {
 	int num = 0;
+	int sum = 0;
 
 	for (int i = 100; i < 1000; i++)
 	{
 		for (int j = 100; j < 1000; j++)
 		{
-			if (Check(i * j))
+			sum = i * j;
+			if (Check(sum))
 			{
 				if ((i*j) > num)
 					num = i*j;
 			}
 		}
+		cout << num << endl;
 	}
-	cout << num << endl;
+	cout << "FINISHED" << endl;
 	return num;
 }
 int _tmain(int argc, _TCHAR* argv[])
