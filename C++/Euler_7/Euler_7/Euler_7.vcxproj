@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0E316413-5B5E-4612-A3B8-EDD507AA15F3}</ProjectGuid>
+    <ProjectGuid>{63FD6831-8977-4F11-8FFC-0388F7DAF50C}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Euler_7</RootNamespace>
   </PropertyGroup>
