@@ -5,34 +5,45 @@
 #include <iostream>
 using namespace std;
 
-int Fill_Array()
+bool Is_Prime(int num)
 {
-	int place = 0;
-	int num = 1;
-	int i;
-	int p;
-	cout << "it works!" << endl;
-	while (place <= 10001)
+	int n = num; //Number
+	int i; //Counter
+	int sum = 0; //Sum
+	int p = 0;
+	for (i = 2; i < n; i++)
 	{
-		for (i = 1;; i++)
+		sum = n%i; //divides number by counter
+		if (sum != 0)
 		{
-			p = num % i;
-			if (p = 0)
-			{
-			place++;
-			cout << num << endl;
-			}
-		}
-		cout << "next" << endl;
-		num++;
-	}
 
-	return num;
+		}
+		else
+		{
+			return 0;
+		}
+	}
 }
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	cout << "test" << endl;
-	Fill_Array();
+	int prime = 0;
+	for (int place = 2; prime < 10001; place++)
+	{
+
+		if (Is_Prime(place) == 0)
+		{
+			//cout << count << " is Not Prime!" << endl;
+		}
+
+		else
+		{
+			prime++;
+			cout << prime << ":" << place << " is Prime" << endl;
+		}
+
+	}
+	
 	cin.get();
 	cin.get();
 	return 0;
