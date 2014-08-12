@@ -79,6 +79,7 @@ void Generate_Triples(int x) //generates the triples
 	}
 
 }
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int input = 0; //input from user
@@ -98,4 +99,3 @@ int _tmain(int argc, _TCHAR* argv[])
 	cin.get(); //not needed, pauses program
 	return 0;
 }
-
