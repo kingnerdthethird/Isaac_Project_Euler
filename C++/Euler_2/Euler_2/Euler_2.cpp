@@ -1,14 +1,10 @@
-// Euler_2.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
-#include<iostream>
-
+#include <iostream>
 using namespace std;
 
-int fib()
+int fib() //plays fizzbuzz
 {
-	long int fib = 0;
+	long int fib = 0; //
 	long int fib1 = 1;
 	long int fib2 = 0;
 	long int c;
@@ -30,7 +26,7 @@ int fib()
 		{
 			cout << "Next number:" << endl;
 		}
-		cout << total << endl;
+		cout << total << endl; //states final sum
 
 	}	
 	return fib;
