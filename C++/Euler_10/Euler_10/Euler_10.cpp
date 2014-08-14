@@ -5,41 +5,42 @@
 #include <iostream>
 using namespace std;
 
-void Is_Prime(__int32 num)
+bool Is_Prime(__int32 num)
 {
 	__int32 n = num; //number to be checked
-	int check = 0; //check for bool
 	int dif = 0; //difference of num divided by count
-	for (__int32 i = 1; i <= num; i++) //runs while i is less than num
+	for (__int32 i = 2; i < num; ++i) //runs while i is less than num
 	{
 		dif = n%i; //sets dif to the remainder of n divided by i
 		if (dif != 0) //runs if dif does not equal 0
 		{
-			check = 1; //sets check to true
+			 //sets check to true
 		}
-		else
+		else //runs if dif does not not equal 0
 		{
-			check = 0; //sets check to false
+			return 0; //returns false
 		}
-	}
-
-	if (check == 1) //runs if check is true
-	{
-		cout << "Prime!" << endl; //states that the number is prime
-	}
-
-	else
-	{
-		cout << "Not prime!" << endl; //states that the number is not prime
 	}
 }
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	for (__int32 i = 0; i <= 2000000; i++)
+	__int64 sum = 0; //sum of all primes
+	for (__int32 i = 2; i <= 2000000; i++) //runs until i is 2000000
 	{
-		Is_Prime(i);
+		if (Is_Prime(i) == 0) //runs if Is_Prime is false
+		{
+
+		}
+		else //runs if Is_Prime is true
+		{
+			sum += i; //adds number to sum of all primes
+			//cout << i << " is prime!" << " Current total is: " << sum << endl;
+		}
 	}
+	cout << sum << endl; //states final sum
+	cin.get(); //pauses
+	cin.get(); //pauses
 	return 0;
 }
 
