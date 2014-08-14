@@ -2,39 +2,39 @@
 #include <iostream>
 using namespace std;
 
-int fib() //plays fizzbuzz
+int fib() //generates fib numbers
 {
-	long int fib = 0; //
-	long int fib1 = 1;
-	long int fib2 = 0;
-	long int c;
-	long int total = 0;
+	long int fib = 0; //number in sequence 
+	long int fib1 = 1; //first number to be added
+	long int fib2 = 0; //second number
+	long int c; //counter
+	long int total = 0; //sum of numbers
 	
-	for (c = 0; c < 35; c++)
+	for (c = 0; c < 35; c++) //runs until c hits 35
 	{
-		if (c <= 1)
-			fib = c;
-		else
+		if (c <= 1) //runs if c is less than or equal to 1
+			fib = c; //sets fib to c
+		else //runs if the above is not true
 		{
-			fib = fib1 + fib2;
-			fib1 = fib2;
-			fib2 = fib;
+			fib = fib1 + fib2; //sets fib to the sum of fib1 added to fib2
+			fib1 = fib2; //sets fib1 to the value of fib2
+			fib2 = fib; //sets fib2 to the value of fib
 		}
-		if (fib % 2 == 0)
-			total += fib;
-		else
+		if (fib % 2 == 0) //runs if fib is even
+			total += fib; //adds fib to total
+		else //runs if fib is not even
 		{
-			cout << "Next number:" << endl;
+			cout << "Next number:" << endl; //states that the program is finding the next number
 		}
 		cout << total << endl; //states final sum
 
 	}	
-	return fib;
+	return fib; //returns fib
 }
 int main()
 {
-	fib();
-	cin.get();
-	cin.get();
-	return 0;
+	fib(); //runs fib
+	cin.get(); //pauses
+	cin.get(); //pauses
+	return 0; 
 }
