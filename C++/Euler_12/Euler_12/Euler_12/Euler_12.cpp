@@ -4,35 +4,45 @@
 #include "stdafx.h"
 #include <iostream>
 #include <math.h>
+using namespace std;
 
-void FindFactorSum();
+int FindFactors(int num);
+int GenerateTriNumber(int num);
 
 int _tmain(int argc, _TCHAR* argv[]){
-	FindFactorSum();
-	system("pause");
+	int i = 2;
+	int num_factors = 0;
+	int tri_number = 0;
+	while ( num_factors < 250){
+		num_factors = FindFactors(tri_number = GenerateTriNumber(i));
+
+		if (num_factors >= 250){
+			cout << tri_number << endl;
+			system("pause");
+		}
+		else{
+			i++;
+		}
+	}
+
 	return 0;
 }
 
-void FindFactorSum(){
-	int triNumber = 1;
-	int naturalNumber = 2;
-	int amountOfFactors = 0;
-
-	for (; amountOfFactors < 500; naturalNumber++){ //doesnt really work
-		for (int i = 1; i <= triNumber; i++){
-			if (triNumber % i == 0){
-				amountOfFactors++;
-				if (amountOfFactors == 250){
-					std::cout << triNumber << " has 250 factors." << std::endl;
-					system("pause");
-				}
-			}
+int FindFactors(int num){
+	int num_factors = 0;
+	for (int i = 1; i <= sqrt(num); i++){
+		if (num % i == 0){
+			num_factors++;
 		}
-		//std::cout << "Triangle number: " << triNumber << std::endl;
-		//std::cout << "Amount of factors: " << amountOfFactors << "\n" << std::endl;
-
-		amountOfFactors = 0;
-		triNumber += naturalNumber;
 	}
+	return num_factors;
 }
 
+int GenerateTriNumber(int num){
+	int tri_num = 1;
+	for (int i = 2; i <= num; i++){
+		tri_num += i;
+	}
+
+	return tri_num;
+}

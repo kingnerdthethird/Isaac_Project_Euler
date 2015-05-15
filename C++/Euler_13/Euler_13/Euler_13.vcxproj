@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0B7D75C7-43F6-450C-B4C2-D002CD982283}</ProjectGuid>
+    <ProjectGuid>{2F645416-C545-47A2-8B11-59290DB389D1}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Euler_3</RootNamespace>
+    <RootNamespace>Euler_13</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -83,7 +83,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Euler_3.cpp" />
+    <ClCompile Include="Euler_13.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

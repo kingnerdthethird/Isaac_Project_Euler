@@ -19,7 +19,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		else //runs if Is_Prime is true
 		{
 			sum += i; //adds number to sum of all primes
-			cout << i << " is prime!" << " Current total is: " << sum << endl;
+			//cout << i << " is prime!" << " Current total is: " << sum << endl;
 		}
 	}
 	cout << sum << endl; //states final sum

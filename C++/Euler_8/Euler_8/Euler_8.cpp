@@ -8,60 +8,49 @@
 
 #include "stdafx.h"
 #include <iostream>
-#include <string>
 using namespace std;
 
-const int LENGTH_OF_ESCAPE_CHARACTER = 1; //used to correct error with strings
+int num_array[1000] = { 
+	7,3,1,6,7,1,7,6,5,3,1,3,3,0,6,2,4,9,1,9,2,2,5,1,1,9,6,7,4,4,2,6,5,7,4,7,4,2,3,5,5,3,4,9,1,9,4,9,3,4,
+	9,6,9,8,3,5,2,0,3,1,2,7,7,4,5,0,6,3,2,6,2,3,9,5,7,8,3,1,8,0,1,6,9,8,4,8,0,1,8,6,9,4,7,8,8,5,1,8,4,3,
+	8,5,8,6,1,5,6,0,7,8,9,1,1,2,9,4,9,4,9,5,4,5,9,5,0,1,7,3,7,9,5,8,3,3,1,9,5,2,8,5,3,2,0,8,8,0,5,5,1,1,
+	1,2,5,4,0,6,9,8,7,4,7,1,5,8,5,2,3,8,6,3,0,5,0,7,1,5,6,9,3,2,9,0,9,6,3,2,9,5,2,2,7,4,4,3,0,4,3,5,5,7,
+	6,6,8,9,6,6,4,8,9,5,0,4,4,5,2,4,4,5,2,3,1,6,1,7,3,1,8,5,6,4,0,3,0,9,8,7,1,1,1,2,1,7,2,2,3,8,3,1,1,3,
+	6,2,2,2,9,8,9,3,4,2,3,3,8,0,3,0,8,1,3,5,3,3,6,2,7,6,6,1,4,2,8,2,8,0,6,4,4,4,4,8,6,6,4,5,2,3,8,7,4,9,
+	3,0,3,5,8,9,0,7,2,9,6,2,9,0,4,9,1,5,6,0,4,4,0,7,7,2,3,9,0,7,1,3,8,1,0,5,1,5,8,5,9,3,0,7,9,6,0,8,6,6,
+	7,0,1,7,2,4,2,7,1,2,1,8,8,3,9,9,8,7,9,7,9,0,8,7,9,2,2,7,4,9,2,1,9,0,1,6,9,9,7,2,0,8,8,8,0,9,3,7,7,6,
+	6,5,7,2,7,3,3,3,0,0,1,0,5,3,3,6,7,8,8,1,2,2,0,2,3,5,4,2,1,8,0,9,7,5,1,2,5,4,5,4,0,5,9,4,7,5,2,2,4,3,
+	5,2,5,8,4,9,0,7,7,1,1,6,7,0,5,5,6,0,1,3,6,0,4,8,3,9,5,8,6,4,4,6,7,0,6,3,2,4,4,1,5,7,2,2,1,5,5,3,9,7,	
+	5,3,6,9,7,8,1,7,9,7,7,8,4,6,1,7,4,0,6,4,9,5,5,1,4,9,2,9,0,8,6,2,5,6,9,3,2,1,9,7,8,4,6,8,6,2,2,4,8,2,
+	8,3,9,7,2,2,4,1,3,7,5,6,5,7,0,5,6,0,5,7,4,9,0,2,6,1,4,0,7,9,7,2,9,6,8,6,5,2,4,1,4,5,3,5,1,0,0,4,7,4,
+	8,2,1,6,6,3,7,0,4,8,4,4,0,3,1,9,9,8,9,0,0,0,8,8,9,5,2,4,3,4,5,0,6,5,8,5,4,1,2,2,7,5,8,8,6,6,6,8,8,1,
+	1,6,4,2,7,1,7,1,4,7,9,9,2,4,4,4,2,9,2,8,2,3,0,8,6,3,4,6,5,6,7,4,8,1,3,9,1,9,1,2,3,1,6,2,8,2,4,5,8,6,
+	1,7,8,6,6,4,5,8,3,5,9,1,2,4,5,6,6,5,2,9,4,7,6,5,4,5,6,8,2,8,4,8,9,1,2,8,8,3,1,4,2,6,0,7,6,9,0,0,4,2,
+	2,4,2,1,9,0,2,2,6,7,1,0,5,5,6,2,6,3,2,1,1,1,1,1,0,9,3,7,0,5,4,4,2,1,7,5,0,6,9,4,1,6,5,8,9,6,0,4,0,8,
+	0,7,1,9,8,4,0,3,8,5,0,9,6,2,4,5,5,4,4,4,3,6,2,9,8,1,2,3,0,9,8,7,8,7,9,9,2,7,2,4,4,2,8,4,9,0,9,1,8,8,
+	8,4,5,8,0,1,5,6,1,6,6,0,9,7,9,1,9,1,3,3,8,7,5,4,9,9,2,0,0,5,2,4,0,6,3,6,8,9,9,1,2,5,6,0,7,1,7,6,0,6,
+	0,5,8,8,6,1,1,6,4,6,7,1,0,9,4,0,5,0,7,7,5,4,1,0,0,2,2,5,6,9,8,3,1,5,5,2,0,0,0,5,5,9,3,5,7,2,9,7,2,5,
+	7,1,6,3,6,2,6,9,5,6,1,8,8,2,6,7,0,4,2,8,2,5,2,4,8,3,6,0,0,8,2,3,2,5,7,5,3,0,4,2,0,7,5,2,9,6,3,4,5,0 
+};
 
-__int32 Converter(string nums) //using __int32 because otherwise I get an annoying error but could use unsigned long int
-{
-	__int32 counter = 1; //total number that's been multiplied
-	for (int c = 0; c <= nums.length() - LENGTH_OF_ESCAPE_CHARACTER; c++) //runs until c is equal to the length of the string
-	{
-		counter *= nums[c] - '0'; //multiplies each char by the total
-		//cout << counter << endl;
-	}
-	return counter; //returns product of all the numbers
-}
+int _tmain(int argc, _TCHAR* argv[]){
+	int sum = 1; 
+	int final_sum = 1;
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-	string longnumber = "7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450";
-	int max_digit = 0; //same as index, is in here because Robert said so and I can't argue with the boss
-	__int32 max_value = 0; //highest product found
-	int curr_value = 0; //product output from function
-	string list; //not needed, used later for things
-	int x; //amount of adjacent digits to look for
-	int index; //not needed, used later for things
-	
-	cout << "How many digits?" << endl; //asks how many adjacent digits to check everything after is bull, i just got bored
-	cin >> x;							//I did this because problem 8 used to be 5 adjacent digits, now its 13 so user gets to choose
-	cout << x << " Digits will be used." << endl; //just added in for fun, not needed
-	cout << "Press enter to begin." << endl; //just added in for fun, not needed
-	cin.get(); //used to pause program
-	cin.get(); //used to pause program
-	cout << "Running..." << endl; //just added in for fun, not needed
-
-	for (int i = 0; i <= longnumber.length() - LENGTH_OF_ESCAPE_CHARACTER - x; i++) //runs until it runs out of space in the number
-	{
-		string sub = longnumber.substr(i, x); //takes a substring from the longnumber that is equal in length to the value input from user
-
-		curr_value = Converter(sub); //set curr_value to whatever Converter returns
-
-		if (curr_value > max_value) //only goes if curr_value is larger than max_value
-		{
-			cout << "Success " << max_value << " Substring " << sub << " Index: " << i << endl; //didn't need this but helped to find errors
-			max_value = curr_value; //set max_value to curr_value
-			// cout << max_value << endl;
-			max_digit = i; //not needed
-			list = sub; //not needed
-			index = i; //not needed
-
+	for (int i = 0; i < 987; i++){
+		for (int j = 0; j < 13; j++){
+			sum *= num_array[i + j];
+			if (sum > final_sum){
+				final_sum = sum;
+				cout << final_sum << endl;
+				for (int k = 0; k < 13; k++){
+					cout << num_array[i + k] << " ";
+				}
+			}
 		}
-		//cout << "Current index: " << i << " Substring: " << sub << " with value:" << curr_value << endl;
+		sum = 1;
 	}
-	cout << "Value: " << max_value << " Numbers: " << list << " Index: " << index << endl; //repeats the final value, substring, and index
-	cin.get(); //used to pause program, not needed
-	cin.get();  //used to pause program, not needed
+	cout << final_sum << endl;
+	system("pause");
 	return 0;
 }
