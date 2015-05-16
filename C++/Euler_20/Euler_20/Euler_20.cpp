@@ -18,7 +18,7 @@ int _tmain(int argc, _TCHAR* argv[]){
 void FindTotal(){
 	long long int sum = 0;
 	int digit;
-	for (int i = 0; i < 127; i++){
+	for (int i = 0; i < 128; i++){
 		//if (factorial[i] < 10 && factorial[i] > 0){
 			cout << sum << " + " << factorial[i] << " = " << sum + factorial[i] << " at " << i + 1 << endl;
 			sum += factorial[i];

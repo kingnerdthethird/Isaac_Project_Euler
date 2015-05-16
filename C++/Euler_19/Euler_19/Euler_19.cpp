@@ -20,7 +20,7 @@ int _tmain(int argc, _TCHAR* argv[]){
 void CountSundays(){
 	int year = 1901;
 	int month = 0;
-	int day_month = 0;
+	int day_month = 15;
 	int day_week = 2;
 	int count = 0; 
 
