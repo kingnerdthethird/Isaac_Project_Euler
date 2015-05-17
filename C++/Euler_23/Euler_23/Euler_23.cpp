@@ -57,6 +57,7 @@ unsigned long long int FinalSum(){
 		for (int j = 0; j < sums.size(); j++){
 			if (i == sums[j]){
 				check = false;
+				break;
 			}
 		}
 		if (check){
