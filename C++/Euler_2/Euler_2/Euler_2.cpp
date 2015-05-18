@@ -31,7 +31,7 @@ int fib() //generates fib numbers
 	}	
 	return fib; //returns fib
 }
-int main()
+int _tmain(int argc, _TCHAR* argv[])
 {
 	fib(); //runs fib
 	cin.get(); //pauses
