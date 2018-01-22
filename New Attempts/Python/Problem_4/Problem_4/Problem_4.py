@@ -10,8 +10,8 @@ def Palindrome(number):
 
 number = 0
 
-for i in range(1000, 100, -1):
-    for j in range(1000, 100, -1):
+for i in reversed(range(100, 1000)):
+    for j in reversed(range(100, 1000)):
         if (i * j) > number and Palindrome(i * j):
             number = (i * j)
 
