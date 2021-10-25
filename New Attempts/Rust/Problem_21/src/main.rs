@@ -12,7 +12,7 @@ fn main() {
         }
     }
 
-    println!("{}", sum / 2);
+    println!("{}", sum / 2); 
 }
 
 fn sum_divisors(n: i32) -> i32{
