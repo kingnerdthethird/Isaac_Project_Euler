@@ -7,7 +7,6 @@ fn main() {
         let mut sum_abundant = false;
         for j in 1..i {
             if is_abundant(j) && is_abundant(i - j) {
-                println!("{}", i);
                 sum_abundant = true;
                 break;
             }
